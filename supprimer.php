@@ -2,25 +2,25 @@
 /**
  ouverture d'une connexion à la base de donnée
  */
-var_dump($toto);
- $objetPdo = new PDO('mysql:host=localhost;dbname=nouvarticle','root','coda');
-
+ //declaration de l'id
+$ID=$_GET['ID'];
+var_dump($ID);
+include("connection.php");
 // preparation de la reqette
-$pdoStat = $objetPdo->prepare("DELETE  FROM ID_article WHERE id=:num LIMIT 1");
+$req = $pdo->prepare('DELETE FROM nouvarticle WHERE ID= ?');
+$req->execute(array($ID) );
 
 //LIAISON DU PARAMETTRE NOMMÉ
-$pdoStat->bindValue(':num', $_GET['toto'], PDO::PARAM_INT);
-
 //execution de la requette
-$executesIsOk =$pdoStat->execute();
+//$executesIsOk =$pdoStat->execute();
 
-if($executesIsOk){
-    $message="l'article à été supprimé";
-}
-else{
-    $message = "Échec de la suppression du contact";
-
-};
+//if($executesIsOk){
+//    $message="l'article à été supprimé";
+//}
+//else{
+//    $message = "Échec de la suppression du contact";
+//
+//};
 ?>
 
 <!DOCTYPE html>

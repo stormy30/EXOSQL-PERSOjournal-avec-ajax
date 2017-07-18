@@ -35,7 +35,7 @@
 //
         echo '<h3>'.$value->titre.'</h3><br>';
         echo '<img src=./uploads/'.$value->image.'>';
-        echo '<p>'.$value->article.'</p><a  href="supprimer.php?toto='.$value->ID_article.'">supprimer article</a>';
+        echo '<p>'.$value->article.'</p><a  href="supprimer.php?$ID='.$value->ID.'">supprimer article</a>';
 
 
         echo '<p> Posté le : '.$value->date.'</p>';
